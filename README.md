@@ -1,4 +1,4 @@
-# Coding examples to demonstrate quality issues in software
+# Examples to demonstrate quality issues in code
 
 Welcome to a series of blog posts and coding examples that demonstrate various quality issues with code.
 
