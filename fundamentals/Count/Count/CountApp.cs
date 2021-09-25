@@ -17,30 +17,30 @@ namespace Count
 
         public void Run()
         {
-var people = GetPeople();
+            var people = GetPeople();
 
-// BAD
-Console.WriteLine($"Number of People: {people.Count()}");
-// GOOD
-Console.WriteLine($"Number of People: {people.Count}");
+            // BAD
+            Console.WriteLine($"Number of People: {people.Count()}");
+            // GOOD
+            Console.WriteLine($"Number of People: {people.Count}");
 
-const int ITERATION = 100000;
+            const int ITERATION = 100000;
 
-using (var ts = new TimingScope("Count()", _logger))
-{
-    for (int i = 0; i < ITERATION; i++)
-    {
-        var count = people.Count();
-    }
-}
+            using (var ts = new TimingScope("Count()", _logger))
+            {
+                for (int i = 0; i < ITERATION; i++)
+                {
+                    var count = people.Count();
+                }
+            }
 
-using (var ts = new TimingScope("Count", _logger))
-{
-    for (int i = 0; i < ITERATION; i++)
-    {
-        var count = people.Count;
-    }
-}
+            using (var ts = new TimingScope("Count", _logger))
+            {
+                for (int i = 0; i < ITERATION; i++)
+                {
+                    var count = people.Count;
+                }
+            }
 
             _logger.Flush();
 
@@ -48,14 +48,12 @@ using (var ts = new TimingScope("Count", _logger))
             Console.ReadLine();
         }
 
-        private static IList<Person> GetPeople()
-        {
-            return new List<Person> {
-                                        new Person { FirstName = "Richard", LastName = "Crane"},
-                                        new Person { FirstName = "Scott", LastName = "Hanselman" },
-                                        new Person { FirstName = "Satya", LastName = "Nadella" },
-                                        new Person { FirstName = "Scott", LastName = "Gu" }
-                                    };
-        }
+        private static IList<Person> GetPeople() => new List<Person>
+            {
+                new Person { FirstName = "Richard", LastName = "Crane"},
+                new Person { FirstName = "Scott", LastName = "Hanselman" },
+                new Person { FirstName = "Satya", LastName = "Nadella" },
+                new Person { FirstName = "Scott", LastName = "Gu" }
+            };
     }
 }
