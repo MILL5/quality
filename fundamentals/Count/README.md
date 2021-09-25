@@ -1,4 +1,4 @@
-## Quality Issue #1 - Count vs. Count()
+# Quality Issue #1 - Count vs. Count()
 
 Welcome to a series of blog posts and coding examples that demonstrate various quality issues with code.
 
